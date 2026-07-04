@@ -1,0 +1,86 @@
+aid: securly
+url: https://raw.githubusercontent.com/api-evangelist/securly/refs/heads/main/apis.yml
+name: Securly
+kind: company
+description: Securly is a K-12 student safety company whose platform spans web filtering,
+  device management (MDM), classroom management, and student wellness/self-harm and
+  threat monitoring across the web, email, and cloud drives. Securly is deployed by
+  school districts and integrates with the school technology stack - Google Workspace,
+  Microsoft 365/Entra, Apple School Manager, and Student Information Systems via the
+  OneRoster and rostering standards. Securly's public developer surface is limited
+  and access-gated - it primarily CONSUMES rostering and identity APIs from external
+  systems rather than exposing a documented public developer API. The one
+  provider-exposed API is a credential-gated Securly MDM API used by third-party
+  device/asset systems to pull device inventory and assign or unassign students to
+  devices; its endpoints and base URL are provisioned per tenant and are not publicly
+  documented as a reference.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- K-12
+- Education
+- EdTech
+- Student Safety
+- Web Filtering
+- Device Management
+- MDM
+- Wellness Monitoring
+- Rostering
+- OneRoster
+- Gated API
+created: '2026-07-04'
+modified: '2026-07-04'
+specificationVersion: '0.19'
+apis:
+- aid: securly:securly-mdm-device-inventory-api
+  name: Securly MDM Device Inventory API
+  tags:
+  - MDM
+  - Devices
+  - Inventory
+  - Gated
+  - Partner
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.securly.com/docs/api-connections
+  properties:
+  - url: https://docs.securly.com/docs/api-connections
+    type: Documentation
+  description: Credential-gated MDM API that lets an approved third-party asset or
+    device-management system pull an inventory list of devices (iPads, Macs, Apple
+    TVs) managed in Securly MDM. Access is provisioned per tenant from MDM to
+    Settings to API connections, which issues a Client ID, a connection-specific
+    Password, an API URL, and a Token URL for a token-based (OAuth-style) exchange.
+    Securly does not publish a public endpoint reference or OpenAPI for this API;
+    endpoints are modeled here from the documented capability and are not fabricated
+    as a verified surface. endpointsModeled - not sourced from a public reference.
+- aid: securly:securly-mdm-student-assignment-api
+  name: Securly MDM Student Assignment API
+  tags:
+  - MDM
+  - Students
+  - Assignment
+  - Gated
+  - Partner
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.securly.com/docs/api-connections
+  properties:
+  - url: https://docs.securly.com/docs/api-connections
+    type: Documentation
+  description: Credential-gated MDM API that lets an approved third-party system
+    assign or unassign students to and from devices managed in Securly MDM. Uses the
+    same per-tenant API connection credentials (Client ID, Password, API URL, Token
+    URL) as the device inventory API. No public endpoint reference or OpenAPI is
+    published by Securly; endpointsModeled - not sourced from a public reference.
+common:
+- type: Website
+  url: https://www.securly.com/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/securly
+- type: Documentation
+  url: https://docs.securly.com/
+- type: Support
+  url: https://support.securly.com/hc/en-us
+- type: Plans
+  url: plans/securly-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

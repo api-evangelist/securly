@@ -1,0 +1,98 @@
+aid: securly
+name: Securly
+review:
+  question: Does Securly expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Securly does not publish any documented
+    public WebSocket, SSE, or other server-push transport on a provider-exposed
+    API. Securly's only provider-exposed API surface - the credential-gated MDM
+    API connections used for device inventory and student assignment - is
+    request/response and is not publicly documented as a reference at all, let
+    alone as a streaming interface. Real-time behavior in the Securly platform
+    (filtering decisions, alerts, wellness signals) is delivered inside Securly's
+    own admin consoles and notification channels, not over a public streaming API,
+    so there is no server-push transport on a Securly public API to model.
+findings:
+  summary: |
+    Securly does not publish a documented public WebSocket API. Securly is a K-12
+    student safety platform (web filtering, MDM, classroom management, and
+    wellness/threat monitoring) sold to school districts under contract. Its
+    developer-facing documentation at docs.securly.com is oriented around
+    ADMIN configuration and INBOUND integration - connecting Securly to Google
+    Workspace, Microsoft 365/Entra, Apple School Manager, and Student Information
+    Systems - rather than around a public developer API that third parties call.
+    The rostering surface (OneRoster 1.2, Google Classroom, Schoology, Canvas,
+    ClassLink, Securly Sync, CSV) is CONSUMED by Securly from external systems;
+    Securly does not expose its own OneRoster API. The one provider-exposed API is
+    a credential-gated Securly MDM API (MDM to Settings to API connections) that
+    issues a Client ID, connection-specific Password, API URL, and Token URL for a
+    token-based exchange, allowing an approved third-party system to pull a device
+    inventory (iPads, Macs, Apple TVs) and assign or unassign students to devices.
+    No public endpoint reference, OpenAPI, or base URL is published for that API,
+    and there is no WebSocket (ws:// or wss://) endpoint documented anywhere on
+    Securly's public surface.
+  accessModel: |
+    Gated / partner. All Securly capabilities require a district contract. The MDM
+    API is not self-service: credentials are provisioned per tenant inside the
+    Securly MDM console and shared with the external system operator. There is no
+    public developer portal, no self-signup API key, and no public API reference or
+    OpenAPI. The API entries modeled in apis.yml are marked endpointsModeled and
+    are not fabricated as a verified endpoint surface.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: |
+        Securly MDM API connections are token-based request/response over HTTPS
+        (Client ID, Password, API URL, Token URL provisioned per tenant). Real but
+        not publicly documented as an endpoint reference.
+    - protocol: OneRoster
+      scheme: https
+      documented: true
+      direction: inbound-consumed
+      note: |
+        Securly consumes OneRoster 1.2 endpoints (API endpoint, Client ID, Client
+        Secret) from an external SIS. This is Securly calling the SIS, not Securly
+        exposing an API.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on Securly's public surface as of the review date.
+  endpointsConfirmedRest: []
+  endpointsModeled:
+    - Securly MDM Device Inventory API - list managed devices (iPads, Macs, Apple TVs). No public path published.
+    - Securly MDM Student Assignment API - assign / unassign students to devices. No public path published.
+sources:
+  - url: https://docs.securly.com/
+    type: Documentation
+    note: Documentation portal - admin and integration focused; no public developer API reference or WebSocket.
+  - url: https://docs.securly.com/docs/api-connections
+    type: Documentation
+    note: MDM API connections - the one provider-exposed, credential-gated API (device inventory, student assignment). No endpoint reference.
+  - url: https://docs.securly.com/docs/oneroster
+    type: Documentation
+    note: OneRoster 1.2 is CONSUMED by Securly from an external SIS, not exposed by Securly.
+  - url: https://docs.securly.com/docs/roster-integrations-overview
+    type: Documentation
+    note: Rostering overview (Google Classroom, Schoology, Canvas, ClassLink, Securly Sync, CSV) - all inbound.
+  - url: https://support.securly.com/hc/en-us/articles/360049519733
+    type: Documentation
+    note: Enabling API access for Securly in Google Workspace - Securly consuming Google APIs.
+  - url: https://www.securly.com/
+    type: Website
+    note: Company / product marketing; district contract sales.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists. Securly publishes no public developer API
+    reference; its only provider-exposed API (the gated MDM API) is
+    request/response and undocumented as endpoints, and its rostering surface is
+    consumed inbound rather than exposed. No AsyncAPI document was created because
+    there is no server-push transport on a Securly public API to model. The apis.yml
+    documents the two real-but-gated MDM API capabilities with endpointsModeled and
+    does not fabricate a full endpoint surface.

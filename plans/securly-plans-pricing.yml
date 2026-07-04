@@ -1,0 +1,41 @@
+aid: securly:securly-plans-pricing
+name: Securly Plans and Pricing
+description: Securly is sold to school districts under contract, priced per student
+  per year and tiered by district size. There is no self-service developer plan and
+  no public API pricing page - the MDM API connection capability is included with a
+  district's Securly MDM entitlement rather than sold as a metered API product.
+  Access to any Securly capability, including the gated MDM API, requires a district
+  contract obtained through Securly sales. The per-student figures below are
+  indicative tiers reported by third-party marketplaces and reviews, not an official
+  Securly rate card, and actual pricing is quoted per district.
+model: Per-student annual subscription, district contract, contact sales
+currency: USD
+notes: |
+  Pricing is negotiated per district and varies by product bundle (Filter, MDM,
+  Classroom, Aware/wellness monitoring), multi-year terms, and volume. Figures shown
+  are indicative and should be confirmed with Securly sales.
+tiers:
+- name: Small district
+  band: 1 - 4,999 students
+  unit: per student / year
+  price: contact sales
+- name: Mid district
+  band: 5,000 - 19,999 students
+  unit: per student / year
+  price: '2.72'
+- name: Large district
+  band: 20,000 - 39,999 students
+  unit: per student / year
+  price: '2.45'
+- name: Very large district
+  band: 40,000+ students
+  unit: per student / year
+  price: '2.18'
+contact:
+- type: Sales
+  url: https://www.securly.com/
+sources:
+- url: https://www.trustradius.com/products/securly-filter/pricing
+  note: Indicative per-student tiers by district size for Securly Filter Premium.
+- url: https://www.securly.com/filter
+  note: Securly Filter product page - contact sales for a district quote.
