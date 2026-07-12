@@ -71,6 +71,10 @@ apis:
     URL) as the device inventory API. No public endpoint reference or OpenAPI is
     published by Securly; endpointsModeled - not sourced from a public reference.
 common:
+- type: VulnerabilityDisclosure
+  url: security/securly-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/securly-domain-security.yml
 - type: Website
   url: https://www.securly.com/
 - type: LinkedIn
