@@ -27,14 +27,16 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: unknown
+  onboarding: approval
   trial: false
   try_now: false
   public: false
-  label: Unknown
+  label: Requires approval
   confidence: low
-  source: []
-  generated: '2026-07-22'
+  source:
+  - plans
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/securly.png
 tags:
