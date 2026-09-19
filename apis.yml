@@ -62,6 +62,12 @@ apis:
   - Devices
   - Inventory
   - Gated
+  - Partners
+  tags_raw:
+  - MDM
+  - Devices
+  - Inventory
+  - Gated
   - Partner
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.securly.com/docs/api-connections
@@ -79,6 +85,12 @@ apis:
 - aid: securly:securly-mdm-student-assignment-api
   name: Securly MDM Student Assignment API
   tags:
+  - MDM
+  - Students
+  - Assignment
+  - Gated
+  - Partners
+  tags_raw:
   - MDM
   - Students
   - Assignment
