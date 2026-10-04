@@ -56,6 +56,7 @@ modified: '2026-07-04'
 specificationVersion: '0.23'
 apis:
 - aid: securly:securly-mdm-device-inventory-api
+  endpointsModeled: true
   name: Securly MDM Device Inventory API
   tags:
   - MDM
@@ -83,6 +84,7 @@ apis:
     endpoints are modeled here from the documented capability and are not fabricated
     as a verified surface. endpointsModeled - not sourced from a public reference.
 - aid: securly:securly-mdm-student-assignment-api
+  endpointsModeled: true
   name: Securly MDM Student Assignment API
   tags:
   - MDM
