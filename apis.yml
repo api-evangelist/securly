@@ -52,7 +52,7 @@ tags:
 - OneRoster
 - Gated API
 created: '2026-07-04'
-modified: '2026-07-04'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: securly:securly-mdm-device-inventory-api
@@ -109,6 +109,8 @@ apis:
     URL) as the device inventory API. No public endpoint reference or OpenAPI is
     published by Securly; endpointsModeled - not sourced from a public reference.
 common:
+- url: https://blog.securly.com/feed/
+  type: BlogRSS
 - type: VulnerabilityDisclosure
   url: security/securly-vulnerability-disclosure.yml
 - type: DomainSecurity
