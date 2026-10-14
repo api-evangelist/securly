@@ -181,3 +181,28 @@
     detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
+- slug: securly-classlink-classlink-partners
+  label: ClassLink (classlink-partners)
+  partner: classlink
+  partner_name: ClassLink (classlink-partners)
+  type: marketplace
+  marketplace: classlink-partners
+  channel: partner-built
+  evidence: https://www.classlink.com/company/partners
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: securly-clever-clever-app-gallery
+  label: Clever (clever-app-gallery)
+  partner: clever
+  partner_name: Clever (clever-app-gallery)
+  category: classroom_management
+  type: marketplace
+  marketplace: clever-app-gallery
+  channel: partner-built
+  evidence: https://clever.com/app-gallery
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
