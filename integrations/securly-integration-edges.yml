@@ -1,0 +1,180 @@
+edges:
+- partner_name: 1EdTech
+  partner: null
+  type: contract
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://site.imsglobal.org/certifications
+  category: 1EdTech certified products
+  contract_reference:
+    register: 1EdTech certified product directory (TrustEd Apps)
+    spec_file: null
+    standard: 1EdTech
+    role: Contributing Member
+    registered_name: Securly
+    matched_domain: securly.com
+    matched_by: domain
+    standards:
+    - Data Privacy
+    certified_products:
+    - product: Securly
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly/v1
+    - product: Securly
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/node/620514
+    - product: Securly AI Chat
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-ai-chat/v1
+    - product: Securly Aware
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-aware/v1
+    - product: Securly Classroom
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-classroom/v1
+    - product: Securly Discern
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-discern/v1
+    - product: Securly Filter
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-filter/v1
+    - product: Securly Flex
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-flex/v1
+    - product: Securly Home
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-home/v1
+    - product: Securly MDM
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-mdm/v1
+    - product: Securly On-Call
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-on-call/v1
+    - product: Securly Pass
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-pass/v1
+    - product: Securly Reveal
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-reveal/v1
+    - product: Securly Rhithm
+      version: v1
+      standards:
+      - Data Privacy
+      implementation: null
+      attributes:
+      - Certified Product
+      - TrustEd Apps Seal
+      - Vetted
+      lapsed: false
+      url: https://site.imsglobal.org/certifications/securly/securly-rhithm/v1
+    detected_by: sweep-edtech.py
+    detected: '2026-10-14'
+generated: '2026-10-14'
+method: searched
+checked:
+- https://site.imsglobal.org/certifications
