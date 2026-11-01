@@ -64,80 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Securly is a K-12 student safety company. Its platform spans web filtering, mobile
-device management (MDM), classroom management, and student wellness, self-harm, and
-threat monitoring across the web, email, and cloud drives. Securly is deployed by
-school districts and integrates deeply with the school technology stack - Google
-Workspace, Microsoft 365 / Entra, Apple School Manager, and Student Information
-Systems (SIS).
+Securly is a K-12 student safety company whose platform spans web filtering, device management (MDM), classroom management, and student wellness/self-harm and threat monitoring across the web, email, and cloud drives. Securly is deployed by school districts and integrates with the school technology stack - Google Workspace, Microsoft 365/Entra, Apple School Manager, and Student Information Systems via the OneRoster and rostering standards. Securly's public developer surface is limited and access-gated - it primarily CONSUMES rostering and identity APIs from external systems rather than exposing a documented public developer API. The one provider-exposed API is a credential-gated Securly MDM API used by third-party device/asset systems to pull device inventory and assign or unassign students to devices; its endpoints and base URL are provisioned per tenant and are not publicly documented as a reference.
 
-This repository is part of the API Evangelist "all" catalog and documents Securly's
-API footprint as an [APIs.json](https://apisjson.org) (0.19) index.
+**Areas:** K-12 · Education · EdTech · Student Safety · Web Filtering · Device Management · MDM · Wellness Monitoring · Rostering · OneRoster · Gated API
 
-## API access model: gated / district-contract
+## Securly on APIs.io
 
-Securly does **not** publish a public, self-service developer API. There is no
-developer portal, no self-signup API key, and no public API reference or OpenAPI.
-All Securly capabilities require a school-district contract obtained through Securly
-sales. This entry is an **honest gated stub**: it records what is real without
-fabricating an endpoint surface.
+Everything profiled for Securly is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/securly/](https://apis.io/providers/securly/)** — or go straight to one of the APIs or properties below.
 
-### What Securly consumes (inbound integration)
+### APIs (2)
 
-Most of Securly's "API" documentation is about connecting Securly *to* the systems a
-district already runs. Securly **consumes** these APIs; it does not expose them:
+- [Securly MDM Device Inventory API](https://apis.io/apis/securly/securly-mdm-device-inventory-api/) — Credential-gated MDM API that lets an approved third-party asset or device-management system pull an inventory list of devices (iPads, Macs, Apple TVs)…
+- [Securly MDM Student Assignment API](https://apis.io/apis/securly/securly-mdm-student-assignment-api/) — Credential-gated MDM API that lets an approved third-party system assign or unassign students to and from devices managed in Securly MDM. Uses the same…
 
-- **Rostering** via OneRoster 1.2, Google Classroom, Schoology, Canvas, ClassLink,
-  Securly Sync, or CSV upload. For OneRoster, an admin supplies the SIS's API
-  endpoint, Client ID, and Client Secret so Securly can pull roster data.
-- **Identity / directory** via Google Workspace and Microsoft 365 / Entra (Azure AD
-  OU sync, Office 365 email scanning).
-- **Apple device management** via Apple School Manager (ASM), ADE/DEP tokens, and
-  VPP content tokens.
+### Published properties
 
-### What Securly exposes (the one provider API - gated)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Securly MDM has an **API connections** feature (MDM to Settings to API connections)
-that provisions credentials for an approved third-party system to call Securly:
+#### Security (2)
 
-- A **Client ID**, a connection-specific **Password**, an **API URL**, and a
-  **Token URL** are issued per tenant for a token-based (OAuth-style) exchange.
-- Documented capabilities: pull a **device inventory** (iPads, Macs, Apple TVs) and
-  **assign / unassign students** to devices.
+Authentication, trust centre, and vulnerability disclosure.
 
-These two capabilities are captured in `apis.yml` as:
+- [Securly Domain Security](https://apis.io/security/securly/securly-domain-security/)
+- [Securly Vulnerability Disclosure](https://apis.io/security/securly/securly-vulnerability-disclosure/)
 
-- `securly:securly-mdm-device-inventory-api`
-- `securly:securly-mdm-student-assignment-api`
+#### Plans and pricing (1)
 
-Both are marked **endpointsModeled** - Securly publishes no endpoint paths, base
-URL, or OpenAPI for them, so no specific request/response surface is asserted here.
+Published plans, tiers and prices.
 
-## WebSocket / real-time
+- [Securly Plans Pricing](https://apis.io/plans/securly/securly-plans-pricing/)
 
-No public WebSocket (`ws://` / `wss://`) or other server-push API is documented
-anywhere on Securly's public surface. See `review.yml`.
+## Where to find this API
 
-## Pricing
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-Securly is sold per student per year under a district contract, tiered by district
-size, via contact-sales. Indicative tiers are recorded in
-`plans/securly-plans-pricing.yml`. The MDM API connection capability is included
-with a district's Securly MDM entitlement rather than sold as a metered API product.
+- [Website](https://www.securly.com/)
+- [Documentation](https://docs.securly.com/)
+- [Support](https://support.securly.com/hc/en-us)
 
-## Files
+## API Evangelist rating
 
-- `apis.yml` - APIs.json 0.19 index for Securly (two gated, endpoint-modeled MDM APIs).
-- `review.yml` - WebSocket / AsyncAPI review and access-model findings.
-- `plans/securly-plans-pricing.yml` - indicative per-student, contact-sales pricing.
+**Kin Score 7.6** — minimal · rubric 0.24.0 · scored 2026-10-17
 
-## Links
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 0.0 |
 
-- Website: https://www.securly.com/
-- Documentation: https://docs.securly.com/
-- Support: https://support.securly.com/hc/en-us
-- LinkedIn: https://www.linkedin.com/company/securly
+**Agent readiness 0.0** — human-only
 
-## Maintainer
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-Kin Lane, API Evangelist - kin@apievangelist.com
+**Regulatory alignment 11.8** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/securly/](https://apis.io/providers/securly/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Securly: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/securly/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
